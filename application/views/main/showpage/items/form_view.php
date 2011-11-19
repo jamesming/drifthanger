@@ -17,16 +17,7 @@ form#image_showpage_item_form input[type=text]{
 padding:6px 5px;
 width:490px;	
 }
-form#image_showpage_item_form textarea#video_embed
-{
-width:495px;
-height:90px;	
-}
-form#image_showpage_item_form textarea#getglue_embed
-{
-width:495px;
-height:90px;	
-}
+
 form#image_showpage_item_form table#main {
 width:100%;
 margin:30px 0px 0px 0px;	
@@ -39,6 +30,10 @@ padding-bottom:5px;
 form#image_showpage_item_form table#main div.image_assets{
 margin-top:25px;
 }
+
+form#image_showpage_item_form div{
+ margin-bottom:30px;	
+}
 /* showpage_hero */
 form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
@@ -50,89 +45,40 @@ form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	height:300px;
 	margin-left: 72px;
 }
-/* showpage_title */
-form#image_showpage_item_form div#image_showpage_title_item_showpage_title{
-	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $data['showpage_items'][0]['showpage_title_items_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
-	background-repeat: no-repeat;
-	border:1px dotted gray;
-	width:455px;
-	height:167px;
-	margin-left: 72px;
-}
-/* showpage_dropdown */
-form#image_showpage_item_form div#image_showpage_dropdown_item_showpage_dropdown{
-	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $data['showpage_items'][0]['showpage_dropdown_items_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
-	background-repeat: no-repeat;
-	border:1px dotted gray;
-	width:460px;
-	height:323px;
-	margin-left: 72px;
-}
 
-/* showpage_hero_iphone */
-form#image_showpage_item_form div#image_showpage_hero_iphone_item_showpage_hero_iphone{
+/* item2 */
+form#image_showpage_item_form div#image_item2{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']; 
+	  	echo $data['showpage_items'][0]['showpage_item2_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:200px;
-	height:301px;
+	width:300px;
+	height:300px;
 	margin-left: 72px;
 }
-
-/* hero_android */
-form#image_showpage_item_form div#image_showpage_hero_android_item_showpage_hero_android{
+/* item3 */
+form#image_showpage_item_form div#image_item3{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $data['showpage_items'][0]['showpage_hero_android_items_image_id']; 
+	  	echo $data['showpage_items'][0]['showpage_item3_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:200px;
-	height:301px;
+	width:300px;
+	height:300px;
 	margin-left: 72px;
 }
-
-/* mobile_thumb*/
-form#image_showpage_item_form div#image_showpage_hero_mobile_thumb{
+/* item4 */
+form#image_showpage_item_form div#image_item4{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']; 
+	  	echo $data['showpage_items'][0]['showpage_item4_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:100px;
-	height:70px;
+	width:300px;
+	height:300px;
 	margin-left: 72px;
 }
-
-/* IPAD HERO */
-form#image_showpage_item_form div#image_showpage_ipad_item_div{
-	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $data['showpage_items'][0]['showpage_hero_ipad_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
-	background-repeat: no-repeat;
-	border:1px dotted gray;
-	width:320px;
-	height:480px;
-	margin-left: 72px;
-}
-
-/* IPAD HERO THUMB */
-form#image_showpage_item_form div#image_showpage_ipad_hero_thumb_item_div{
-	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']:'' ); 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
-	background-repeat: no-repeat;
-	border:1px dotted gray;
-	width:262px;
-	height:122px;
-	margin-left: 72px;
-}
-
 form#image_showpage_item_form #textarea_div{
 width:100%;
 height: 180px;
@@ -178,12 +124,7 @@ form#image_showpage_item_form  div.image_div div.icon_container div.icon{
 form#image_showpage_item_form  div.image_div div.icon_container div.change_pic{
 	background:lightblue;	
 }
-form#image_showpage_item_form  div.image_div div.icon_container div.facebook{
-	background:orange;	
-}
-form#image_showpage_item_form  div.image_div div.icon_container div.video{
-	background:gray;	
-}
+
 form#image_showpage_item_form #submit{
 width:70px;	
 }
@@ -210,20 +151,15 @@ display:none;
 <body >
 <form id='image_showpage_item_form'>
 		<table  id='main'>
-			<tr  class='hide ' >
-				<td  class='main_table ' > URL Name
-				</td>
-				<td  class='main_table '><input name="url_name" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['url_name']) ? $data['showpage_items'][0]['url_name']:'' )    ?>">
-				</td>
-			</tr>
+
 			<tr>
-				<td  class='main_table ' > Name
+				<td  class='main_table ' > Question
 				</td>
-				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_items'][0]['name']    ?>">
+				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_items'][0]['name']    ?>"> <input  class=' submit' name="" type="button" value="submit">
 				</td>
 			</tr>
 
-			<tr  >
+			<tr   class='hide ' >
 				<td  class='main_table '> Keywords
 				</td>
 				<td  class='main_table '><input name="keywords" id="" type="text" value="<?php echo $data['showpage_items'][0]['keywords']    ?>">
@@ -239,13 +175,6 @@ display:none;
 			</tr>	
 
 			<tr>
-				<td   colspan=2>
-					<div>
-						<input  class=' submit' name="" type="button" value="submit">
-					</div>
-				</td>
-			</tr>	
-			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
 							<div image_type='showpage_hero' image_type_id='10' class='float_left image_div'  id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_hero_items_image_id']    ?>'>
@@ -253,7 +182,26 @@ display:none;
 							
 					
 					</div>
-
+					
+					<div  class=' image_assets' >
+							<div image_type='item2' image_type_id='42' class='float_left image_div'  id='image_item2' showpage_items_image_id='<?php echo ( isset($data['showpage_items'][0]['showpage_item2_image_id']  ) ? $data['showpage_items'][0]['showpage_item2_image_id'] :0 )   ?>'>
+							</div>
+							
+					
+					</div>					
+					
+					<div  class=' image_assets' >
+							<div image_type='item3' image_type_id='43' class='float_left image_div'  id='image_item3' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item3_image_id']:0)    ?>'>
+							</div>
+							
+					
+					</div>					
+					<div  class=' image_assets' >
+							<div image_type='item4' image_type_id='44' class='float_left image_div'  id='image_item4' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item4_image_id']:0 )  ?>'>
+							</div>
+							
+					
+					</div>
 				</td>
 			</tr>	
 	
@@ -325,19 +273,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 						);
 					})
 
-				$('.image_div div.icon_container div.facebook')
-					.css({cursor:'pointer'})
-					.click(function(event) {
-						open_dialogue_facebook_link()();
-					})					
-		
-		
-				$('.image_div div.icon_container div.video')
-					.css({cursor:'pointer'})
-					.click(function(event) {
-						open_dialogue_video_link()();
-					})					
-		
+
 		
 		
 				$(".image_div").css({cursor:'pointer',border:'1px solid gray'}).append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
@@ -356,14 +292,6 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				})
 
 
-				<?php if( $data['showpage_items'][0]['showpage_title_items_image_id'] != 0 ){?>
-					$(".image_div[image_type='showpage_title']").children('div.icon_container').append("<div  class='icon video'  >v</div><div  class='icon facebook'  >f</div>")
-				<?php } ?>		$('#main td:nth-child(odd)').css({
-					'text-align':'right',
-					'padding-right':'9px',
-					'padding-top':'8px',
-					'width':'15%'
-				})
 
 
 				$('.image_div div.icon_container div.change_pic')
@@ -445,66 +373,6 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
   });
     
 
-
-function open_dialogue_facebook_link(){
-
-		submit_inputs(close_fancyzoom=0);
-
-
-		$("#iframe_src_for_image")
-		.css({width:'750px',height:'400px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/create_facebook_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
-
-			
-		var width_of_dialog = 795;
-		
-		
-		
-		var p = $('#image_showpage_title_item_showpage_title');
-		position = p.position();
-		
-		
-		
-		var left_coord = ($(window).width()/2 - width_of_dialog/2);
-
-		$("#dialog" ).dialog({
-			position:[left_coord,position.top],
-			height: 510,
-			zIndex: -10,
-			width: width_of_dialog,
-			resizable: false 
-			})
-						
-};	
-
-
-
-function open_dialogue_video_link(){
-
-		submit_inputs(close_fancyzoom=0);
-
-
-		$("#iframe_src_for_image")
-		.css({width:'750px',height:'400px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/create_video_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
-
-			
-		var width_of_dialog = 795;
-		
-		var p = $('#image_showpage_title_item_showpage_title');
-		position = p.position();
-		
-		var left_coord = ($(window).width()/2 - width_of_dialog/2);
-
-		$("#dialog" ).dialog({
-			position:[left_coord,position.top],
-			height: 510,
-			zIndex: -10,
-			width: width_of_dialog,
-			resizable: false 
-			})
-						
-};	
 
 
 function dialog_close(){

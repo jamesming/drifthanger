@@ -1756,7 +1756,23 @@ submitted
 						
 		    break;	
 
+		    case 'item2':
+	
+						$new_width  = '300';
+						
+		    break;	
 			        	    		     		    
+		    case 'item3':
+	
+						$new_width  = '300';
+						
+		    break;	
+		    
+		    case 'item4':
+	
+						$new_width  = '300';
+						
+		    break;			    
 
 		  }
 
