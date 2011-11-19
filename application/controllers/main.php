@@ -1747,15 +1747,8 @@ submitted
 								);	
 								
 			$new_width  = '255';								
-								
 
 			switch ($image_type ) {
-				
-		    case 'feature_title_graphic':
-	
-						$new_width  = '255';
-						
-		    break;	
 
 		    case 'showpage_hero':
 	
@@ -1763,122 +1756,7 @@ submitted
 						
 		    break;	
 
-
-		    case 'showpage_title':
-	
-						$new_width  = '455';
-						
-		    break;					
-				
-		    case 'showpage_dropdown':
-	
-						$new_width  = '460';
-						
-		    break;					
-				
-		    case 'showpage_feature_large':
-	
-						$new_width  = '458';
-						
-		    break;	
-		    case 'showpage_hero_iphone':
-	
-						$new_width  = '200';
-						
-		    break;	
-		    
-		    case 'showpage_hero_android':
-	
-						$new_width  = '200';
-						
-		    break;	
-		    
-		    case 'showpage_hero_ipad':
-	
-						$new_width  = '320';
-						
-		    break;			    
-		    
-		    case 'showpage_ipad_hero_thumb':
-	
-						$new_width  = '262';
-						
-		    break;		    
-		    case 'showpage_hero_mobile_thumb':
-	
-						$new_width  = '100';
-						
-		    break;			    
-		    		 
-		    case 'showpage_feature_small':
-	
-						$new_width  = '138';
-						
-		    break;			    
-		    
-		    case 'feature_large':
-	
-						$new_width  = '295';
-						
-		    break;
-		    
-		    
-		    case 'showpage_cast':
-	
-						$new_width  = '148';
-						
-		    break;		    
-		    
-		    
-		    case 'showpage_cast_iphone':
-	
-						$new_width  = '148';
-						
-		    break;		   
-		    
-		    case 'showpage_iphone_gallery_photo':
-	
-						$new_width  = '160';
-						
-		    break;
-		    
-		    		
-		    case 'showpage_ipad_gallery_photo':
-	
-						$new_width  = '320';
-						
-		    break;
-
-		    case 'showpage_iphone_gallery_photo_thumb_inactive':
-	
-						$new_width  = '132';
-						
-		    break;		
-
-		    case 'showpage_iphone_gallery_photo_thumb_active':
-	
-						$new_width  = '132';
-						
-		    break;		
-		    
-		    case 'showpage_android_gallery_photo':
-	
-						$new_width  = '160';
-						
-		    break;		
-
-
-		    case 'showpage_android_gallery_photo_thumb_inactive':
-	
-						$new_width  = '132';
-						
-		    break;		
-
-		    case 'showpage_android_gallery_photo_thumb_active':
-	
-						$new_width  = '132';
-						
-		    break;			        	    		     		    
+			        	    		     		    
 
 		  }
 
@@ -1892,52 +1770,6 @@ submitted
 		$height = $new_height
 		);
 		
-		
-		
-		
-		
-		
-	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
-	if (in_array($image_type, array(
-																	'showpage_hero_iphone',
-																	'showpage_cast_iphone',
-																	'showpage_iphone_gallery_photo',
-																	'showpage_iphone_gallery_photo_thumb_inactive',
-																	'showpage_iphone_gallery_photo_thumb_active',																
-																	'showpage_hero_mobile_thumb',
-																	'showpage_hero_android',
-																	'showpage_android_gallery_photo'																	
-																	)
-							)
-		){
-
-		copy(
-			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image@2x.png'
-		);		
-
-		$new_height = $this->tools->get_new_size_of (
-				$what = 'height', 
-				$based_on_new = $width_of_file/2, 
-				$orig_width = $width_of_file, 
-				$orig_height = $height_of_file 
-		);
-		
-		$this->tools->resize_this(
-			$full_path = $dir_path . '/' . 'image.png', 
-			$width = $width_of_file/2, 
-			$height = $new_height
-		);
-		
-
-		
-	}	
-	
-	
-	
-	
-	
-	
 
 						
 			?>
