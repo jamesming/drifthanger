@@ -399,7 +399,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 					);
 						
 				});	
-/*			
+			
 				mbox = $("#text_area").css({
 						height:"100px",
 						width:"100%"
@@ -440,11 +440,71 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				setTimeout(function() { 											
 						mbox.set_text( $('#text_area').text()   );
 				}, 100);
-				*/
+				
 				
   });
     
 
+
+function open_dialogue_facebook_link(){
+
+		submit_inputs(close_fancyzoom=0);
+
+
+		$("#iframe_src_for_image")
+		.css({width:'750px',height:'400px'})
+		.attr('src','<?php echo base_url();    ?>index.php/main/create_facebook_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
+
+			
+		var width_of_dialog = 795;
+		
+		
+		
+		var p = $('#image_showpage_title_item_showpage_title');
+		position = p.position();
+		
+		
+		
+		var left_coord = ($(window).width()/2 - width_of_dialog/2);
+
+		$("#dialog" ).dialog({
+			position:[left_coord,position.top],
+			height: 510,
+			zIndex: -10,
+			width: width_of_dialog,
+			resizable: false 
+			})
+						
+};	
+
+
+
+function open_dialogue_video_link(){
+
+		submit_inputs(close_fancyzoom=0);
+
+
+		$("#iframe_src_for_image")
+		.css({width:'750px',height:'400px'})
+		.attr('src','<?php echo base_url();    ?>index.php/main/create_video_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
+
+			
+		var width_of_dialog = 795;
+		
+		var p = $('#image_showpage_title_item_showpage_title');
+		position = p.position();
+		
+		var left_coord = ($(window).width()/2 - width_of_dialog/2);
+
+		$("#dialog" ).dialog({
+			position:[left_coord,position.top],
+			height: 510,
+			zIndex: -10,
+			width: width_of_dialog,
+			resizable: false 
+			})
+						
+};	
 
 
 function dialog_close(){
