@@ -41,13 +41,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-
-
 $db['default']['hostname'] = "localhost";
-
-$db['default']['username'] = "jamesming";
+$db['default']['username'] = "root";
 $db['default']['password'] = "ourlady";
-$db['default']['database'] = "drifthanger_db";
+$db['default']['database'] = "scenecredit_db";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
