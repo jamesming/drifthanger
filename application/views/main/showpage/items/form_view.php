@@ -222,60 +222,15 @@ display:none;
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_items'][0]['name']    ?>">
 				</td>
 			</tr>
-			<tr   class='hide '>
-				<td  class='main_table '> Title
-				</td>
-				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['showpage_items'][0]['title']    ?>">
-				</td>
-			</tr>
-			<tr  class='hide '>
+
+			<tr  >
 				<td  class='main_table '> Keywords
 				</td>
 				<td  class='main_table '><input name="keywords" id="" type="text" value="<?php echo $data['showpage_items'][0]['keywords']    ?>">
 				</td>
 			</tr>
+		
 			<tr  class='hide '>
-				<td  class='main_table '> Facebook
-				</td>
-				<td  class='main_table '><input name="facebook_url" id="" type="text" value="<?php echo $data['showpage_items'][0]['facebook_url']    ?>">
-				</td>
-			</tr>		
-			
-			<tr  class='hide '>
-				<td  class='main_table '> Twitter
-				</td>
-				<td  class='main_table '><input name="twitter_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['twitter_url']) ? $data['showpage_items'][0]['twitter_url'] :'' )    ?>">
-				</td>
-			</tr>		
-			
-			<tr  class='hide '>
-				<td  class='main_table '> Hulu
-				</td>
-				<td  class='main_table '><input name="hulu_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['hulu_url']) ? $data['showpage_items'][0]['hulu_url'] :'' )    ?>">
-				</td>
-			</tr>		
-			
-			<tr  class='hide '>
-				<td  class='main_table '> GetGlue
-				</td>
-				<td  class='main_table '><input name="getglue_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['getglue_url']) ? $data['showpage_items'][0]['getglue_url'] :'' )    ?>">
-				</td>
-			</tr>	
-						
-			<tr  class='hide '>
-				<td  class='main_table '> Video Embed
-				</td>
-				<td  class='main_table '><textarea name="video_embed" id="video_embed" ><?php echo $data['showpage_items'][0]['video_embed']    ?></textarea>
-				</td>
-			</tr>	
-			
-			<tr  class='hide '>
-				<td  class='main_table '> Get Glue Embed
-				</td>
-				<td  class='main_table '><textarea name="getglue_embed" id="getglue_embed" ><?php echo ( isset( $data['showpage_items'][0]['getglue_embed']) ? $data['showpage_items'][0]['getglue_embed']:'' )    ?></textarea>
-				</td>
-			</tr>					
-			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
 							<textarea  class=' clearfix' name='about' id='text_area'><?php echo $data['showpage_items'][0]['about']    ?></textarea>
@@ -303,175 +258,7 @@ display:none;
 			</tr>	
 	
 
-			<tr  class='hide '>
-				<td class='main_table image_assets' colspan=2>
-					<div  class=' image_assets' >
-							<div image_type='showpage_title' image_type_id='12' class='float_left image_div'  id='image_showpage_title_item_showpage_title' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_title_items_image_id']    ?>'>
-							</div>
-							<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left ' name="showpage_title_left_margin" id="showpage_title_left_margin" type="text" value="<?php echo  $data['showpage_items'][0]['showpage_title_left_margin']   ?>">
-					
-					</div>
 
-				</td>
-			</tr>	
-
-
-			<tr  class='hide '>
-				<td class='main_table image_assets' colspan=2>
-					<div  class=' image_assets' >
-							<div image_type='showpage_dropdown' image_type_id='19' class='float_left image_div'  id='image_showpage_dropdown_item_showpage_dropdown' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_dropdown_items_image_id']    ?>'>
-							</div>
-							
-					
-					</div>
-
-				</td>
-			</tr>	
-
-				<tr   class='hide '>
-					<td colspan=2>
-						<br />
-						<hr /   style='border:2px solid gray; background:gray;'  >
-					</td>
-				</tr>
-
-			<tr  class='hide '>
-				<td>
-					&nbsp;
-				</td>
-				<td >
-							<style>
-								#iphone_directTo_div{
-								margin-right:420px;	
-								}
-								table#iphone_directTo_table{
-									border:1px solid gray;
-								}
-								table#iphone_directTo_table td{/*
-									border-right:0px solid gray;	
-									border-bottom:0px solid gray;*/
-									white-space:nowrap;
-									vertical-align:middle;
-								}
-							</style>
- 							<div   id='iphone_directTo_div' >	
- 								
- 								<table id='iphone_directTo_table'>
- 									<tr>
- 										<td>
- 											<input <?php   echo ($data['showpage_items'][0]['isHot'] == 1? " checked ": "" )  ?> name="isHot" id="isHot" type="checkbox" value="1">	
- 										</td>
- 										<td>Hot 
- 										</td>
- 										<td>
- 											
-
- 											&nbsp;
- 											
- 											
- 											
- 										</td>
- 									</tr> 									
- 									<tr>
- 										<td><input name="iphone_directTo" type="radio" value="1"> </td>
- 										<td>Internal 
- 										</td>
- 										<td>
- 											
-
- 											&nbsp;
- 											
- 											
- 											
- 										</td>
- 									</tr>
- 									<tr>
- 										<td><input name="iphone_directTo" type="radio" value="2">	</td>
- 										<td>External
- 										</td>
- 										<td>
- 										</td>
- 									</tr>
- 									<tr>
- 										<td><input name="iphone_directTo" type="radio" value="3"></td>
- 										<td>Video
- 										</td>
- 										<td><input name="videoID" id="videoID" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['videoID']  ) ? $data['showpage_items'][0]['videoID']  :'' )  ?>"    style='width:95px'  >
- 										</td>
- 									</tr>
- 									<tr>
- 										<td>
- 											<input name="iphone_directTo" type="radio" value="4">	
- 											<br /><br />	
- 										</td>
- 										<td>
- 											None
- 											<br /><br />
- 										</td>
- 										<td>
- 										</td>
- 									</tr> 									 									 									
- 								</table>
-
-								
-							</div>	
-				</td>
-			</tr>
-
-
-			<tr  class='hide '>
-				<td class='main_table image_assets' colspan=2>
-					<div  class='float_left image_assets' >
-							<div image_type='showpage_hero_iphone' image_type_id='11' class='float_left image_div'  id='image_showpage_hero_iphone_item_showpage_hero_iphone' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']:'' )    ?>'>
-							</div>
-							
-					
-					</div>
-					<div  class='float_left image_assets' >
-							<div image_type='showpage_hero_android' image_type_id='29' class='float_left image_div'  id='image_showpage_hero_android_item_showpage_hero_android' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_android_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_android_items_image_id']:'' )    ?>'>
-							</div>
-							
-					
-					</div>
-					
-					<div  class='float_left image_assets' >
-							<div image_type='showpage_hero_mobile_thumb' image_type_id='30' class='float_left image_div'  id='image_showpage_hero_mobile_thumb' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']:'' )    ?>'>
-							</div>
-							
-					
-					</div>					
-					
-				</td>
-				
-				
-			</tr>				
-			<tr  class='hide '>
-				<td class='main_table image_assets' colspan=2>
-
-					<div  class='float_left image_assets' >
-							<div image_type='showpage_hero_ipad' image_type_id='37' class='float_left image_div'  id='image_showpage_ipad_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_ipad_id']) ? $data['showpage_items'][0]['showpage_hero_ipad_id']:'' )    ?>'>
-							</div>
-							
-					
-					</div>
-					
-					<div  class='float_left image_assets' >
-							<div image_type='showpage_ipad_hero_thumb' image_type_id='36' class='float_left image_div'  id='image_showpage_ipad_hero_thumb_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']:'' )    ?>'>
-							</div>
-
-					</div>					
-					
-				</td>
-				
-				
-			</tr>		
-			<tr  class='hide '>
-				<td   colspan=2>
-					<div>
-						<input  class=' submit' name="" type="button" value="submit">
-					</div>
-				</td>
-			</tr>	
 			
 		</table>
 </form>
@@ -612,7 +399,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 					);
 						
 				});	
-			
+/*			
 				mbox = $("#text_area").css({
 						height:"100px",
 						width:"100%"
@@ -653,71 +440,11 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				setTimeout(function() { 											
 						mbox.set_text( $('#text_area').text()   );
 				}, 100);
-				
+				*/
 				
   });
     
 
-
-function open_dialogue_facebook_link(){
-
-		submit_inputs(close_fancyzoom=0);
-
-
-		$("#iframe_src_for_image")
-		.css({width:'750px',height:'400px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/create_facebook_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
-
-			
-		var width_of_dialog = 795;
-		
-		
-		
-		var p = $('#image_showpage_title_item_showpage_title');
-		position = p.position();
-		
-		
-		
-		var left_coord = ($(window).width()/2 - width_of_dialog/2);
-
-		$("#dialog" ).dialog({
-			position:[left_coord,position.top],
-			height: 510,
-			zIndex: -10,
-			width: width_of_dialog,
-			resizable: false 
-			})
-						
-};	
-
-
-
-function open_dialogue_video_link(){
-
-		submit_inputs(close_fancyzoom=0);
-
-
-		$("#iframe_src_for_image")
-		.css({width:'750px',height:'400px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/create_video_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
-
-			
-		var width_of_dialog = 795;
-		
-		var p = $('#image_showpage_title_item_showpage_title');
-		position = p.position();
-		
-		var left_coord = ($(window).width()/2 - width_of_dialog/2);
-
-		$("#dialog" ).dialog({
-			position:[left_coord,position.top],
-			height: 510,
-			zIndex: -10,
-			width: width_of_dialog,
-			resizable: false 
-			})
-						
-};	
 
 
 function dialog_close(){
