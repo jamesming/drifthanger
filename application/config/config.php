@@ -20,8 +20,8 @@ $urlParts = explode('.', $_SERVER['HTTP_HOST']);
 $subdomain = $urlParts[0];		
 
 
-if( $_SERVER['HTTP_HOST'] == 'http://jamesming.whsites.net/drifthanger/' ){
-	$config['base_url']	= "http://jamesming.whsites.net/drifthanger/";	
+if( $_SERVER['HTTP_HOST'] == 'http://www.jamesming.com/drifthanger/' ){
+	$config['base_url']	= "http://www.jamesming.com/drifthanger/";	
 }elseif( $_SERVER['HTTP_HOST'] == 'localhost' ){
 	$config['base_url']	= "http://localhost/drifthanger/";
 };
