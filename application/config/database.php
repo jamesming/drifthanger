@@ -42,11 +42,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 
-if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){
-	$db['default']['hostname'] = "192.168.110.211";
-}else{
-	$db['default']['hostname'] = "localhost";
-};
+
+$db['default']['hostname'] = "localhost";
 
 $db['default']['username'] = "jamesming";
 $db['default']['password'] = "ourlady";
