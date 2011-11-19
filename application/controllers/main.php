@@ -1759,7 +1759,7 @@ submitted
 
 		    case 'showpage_hero':
 	
-						$new_width  = '700';
+						$new_width  = '300';
 						
 		    break;	
 

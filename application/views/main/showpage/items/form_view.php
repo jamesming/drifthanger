@@ -46,8 +46,8 @@ form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:500px;
-	height:422px;
+	width:300px;
+	height:300px;
 	margin-left: 72px;
 }
 /* showpage_title */
