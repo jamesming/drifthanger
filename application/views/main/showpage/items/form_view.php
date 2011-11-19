@@ -276,19 +276,13 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 		
 		
-				$(".image_div").css({cursor:'pointer',border:'1px solid gray'}).append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
+				$(".image_div").css({cursor:'pointer',border:'1px solid gray'})
+				.append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
 				.mouseover(function(event) {
 							$(this).children('div.icon_container').show()
 				})
 				.mouseout(function(event) {
 							$(this).children('div.icon_container').hide()
-				}).append("<div  class='label ' ></div>")
-				.mouseover(function(event) {
-							$(this).css({'padding-top':$(this).height/2}).children('div.label')
-							//.html($(this).attr('image_type')).show()
-				})
-				.mouseout(function(event) {
-							$(this).children('div.label').hide()
 				})
 
 

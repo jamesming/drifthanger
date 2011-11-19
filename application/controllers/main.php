@@ -65,35 +65,7 @@ class Main extends CI_Controller {
 
 				switch ( $segment3 ) {
 		
-			    case 'nu_spotlight':
-		
-						$data = $this->custom->prepare_nu_spotlight_items( 
-								$segment4,
-								$this->input->get()
-						 );
-						 
-			    break;
-				
-			    case 'carousel':
-		
-						$data = $this->custom->prepare_carousel_items( 
-								$segment4,
-								$this->input->get()
-						 );
-	 
-
-			    break;
-			    
-			    
-			    case 'feature':
-		
-						$data = $this->custom->prepare_feature_items( 
-								$segment4,
-								$this->input->get()
-						 );
-						 
-
-			    break;
+			 
 			    
 			    
 			    case 'showpage':
@@ -102,58 +74,10 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-						 
 
 			    break;
 			    
-			    case 'showpage_cast':
-		
-						$data = $this->custom->prepare_showpage_cast_items( 
-								$segment4,
-								$this->input->get()
-						 );
-					
-
-			    break;
-			    
-			    case 'showpage_feature':
-		
-						$data = $this->custom->prepare_showpage_feature_items( 
-								$segment4,
-								$this->input->get()
-						 );
-
-			    break;
-			    
-			    
-			    case 'showpage_photos':
-		
-						$data = $this->custom->prepare_showpage_photos_items( 
-								$segment4,
-								$this->input->get()
-						 );
-
-			    break;	
-			    
-			    
-			    case 'showpage_mobile_gallery_photo':
-		
-						$data = $this->custom->prepare_showpage_mobile_gallery_photo_items( 
-								$segment4,
-								$this->input->get()
-						 );
-					
-
-			    break;
-			    
-	    
-			    
-			    case 'calendar':
-		
-						$data = $this->custom->prepare_calendar($this->input->get());
-
-			    break;
-
+			   
 				};
 
 

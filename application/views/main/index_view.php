@@ -113,7 +113,7 @@ height:690px;
   			
   			<li  class='showpage ' >
   				<a href='<?php   echo base_url()  ?>index.php/main/index/showpage'>
-  				Travel Destinations
+  				Questions
   				</a>
   			</li>
   			
