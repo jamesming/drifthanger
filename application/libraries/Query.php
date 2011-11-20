@@ -521,10 +521,22 @@ function query(){
 				$name_of_item_id	 = 'showpage_item_id',
 				$image_table = 'showpage_items_images',
 				$image_types_array);
+				
+		
+			foreach( $showpage_items  as   $showpage_item){
+				foreach( $showpage_item  as  $key => $value){
+					$showpage_item[$key]=$value;
+					
 
+					$showpage_item['tags']='test';
+				}
+				$new_showpage_items[] = $showpage_item;
+				
+			}
+				
 
-			if( isset($showpage_items)){
-				return $showpage_items;
+			if( isset($new_showpage_items)){
+				return $new_showpage_items;
 			}else{
 				return;
 			};

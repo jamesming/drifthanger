@@ -74,7 +74,6 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-
 			    break;
 			    
 			   
@@ -86,53 +85,70 @@ class Main extends CI_Controller {
 				);
 	}
 	
-	/**
-	 * get_nu_spotlight_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_nu_spotlight_form
-	 * @access public
-	 */
-	 
-	 
-	public function get_nu_spotlight_form(){
-		
-				$data['nu_spotlight_items'] = $this->query->get_nu_spotlight_items(
-							$where_array = array( 'id' => $this->input->get('nu_spotlight_item_id')) 
-				);	
-				
+	
 
-				$this->load->view('main/nu_spotlight/items/form_view', 
-					array( 'data' => $data )
+	
+	public function update_tags(){
+		
+
+		$showpage_items_image_id = $this->input->post('showpage_items_image_id');
+		$tags = explode(',', $this->input->post('tags'));
+
+		
+		foreach( $tags  as   $tag){
+			
+			
+				/* TAGS TABLE FIRST */
+				$table = 'tags';
+				$where_array = array(
+						'name' => trim($tag)
 				);
+				
+				if( $this->my_database_model->count_records( $table,  $where_array ) != 0 ){
+					
+					$tags = $this->my_database_model->select_from_table( 
+					$table, 
+					$select_what = 'id', 
+					$where_array
+					);
+					
+					$tag_id  =  $tags[0]->id;
+					
+				}else{
+					$tag_id  = $this->my_database_model->insert_table(
+													'tags', 
+													$insert_what = $where_array
+													); 
+					
+				};			
+				
+				/* CHECK IMAGES_TAGS*/
+				$table = 'images_tags';
+				$where_array = array(
+						'tag_id' => $tag_id,
+						'showpage_item_id' => $showpage_items_image_id
+				);
+				$result = $this->my_database_model->check_if_exist(
+					$where_array, 
+					$table 
+				);
+		
+				if( $result == TRUE ){
+					
+					
+				}else{
+					$insert_id = $this->my_database_model->insert_table(
+													'images_tags', 
+													$insert_what = $where_array
+													); 
+				};	
+			
+		}
+		
+
 		
 	}
 	
-	
-	/**
-	 * get_feature_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_feature_form
-	 * @access public
-	 */
-	 
-	 
-	public function get_feature_form(){
-		
-				$data['feature_items'] = $this->query->get_feature_items(
-							$where_array = array( 'id' => $this->input->get('feature_item_id')) 
-				);	
-				
-				
-
-				$this->load->view('main/feature/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}	
 	
 	
 	/**
@@ -150,6 +166,171 @@ class Main extends CI_Controller {
 				$data['showpage_items'] = $this->query->get_showpage_items(
 							$where_array = array( 'id' => $this->input->get('showpage_item_id')) 
 				);	
+
+
+				/* one */
+				foreach( $data['showpage_items']  as  $showpage_item){
+					foreach( $showpage_item  as  $key => $value){
+						$showpage_item[$key]=$value;
+						if( $key == 'showpage_hero_items_image_id'){
+							
+								$join_array = array(
+									'tags' => 'tags.id = images_tags.tag_id'
+									);
+							
+							
+								$tags_raw = $this->my_database_model->select_from_table( 
+																				$table = 'images_tags', 
+																				$select_what = 'name',
+																				$where_array = array(
+																					'images_tags.showpage_item_id' => $value
+																				), 
+																				$use_order = TRUE, 
+																				$order_field = 'name', 
+																				$order_direction = 'asc', 
+																				$limit = -1,
+																				$use_join = TRUE, 
+																				$join_array
+																				);	
+																				
+								$tags_raw = $this->tools->object_to_array($tags_raw);								
+								foreach( $tags_raw  as  $tag){
+									foreach( $tag  as  $value){
+										$tags[] = $value;
+									}
+								}
+								$data['showpage_hero_tags'] = ( isset( $tags) ? $tags:array() );
+				
+				
+						};
+						
+					}
+					
+				}
+				unset($tags);
+				/*two*/
+
+				foreach( $data['showpage_items']  as  $showpage_item){
+					foreach( $showpage_item  as  $key => $value){
+						$showpage_item[$key]=$value;
+						if( $key == 'showpage_item2_image_id'){
+							
+								$join_array = array(
+									'tags' => 'tags.id = images_tags.tag_id'
+									);
+							
+							
+								$tags_raw = $this->my_database_model->select_from_table( 
+																				$table = 'images_tags', 
+																				$select_what = 'name',
+																				$where_array = array(
+																					'images_tags.showpage_item_id' => $value
+																				), 
+																				$use_order = TRUE, 
+																				$order_field = 'name', 
+																				$order_direction = 'asc', 
+																				$limit = -1,
+																				$use_join = TRUE, 
+																				$join_array
+																				);	
+																				
+								$tags_raw = $this->tools->object_to_array($tags_raw);								
+								foreach( $tags_raw  as  $tag){
+									foreach( $tag  as  $value){
+										$tags[] = $value;
+									}
+								}
+								$data['item2_tags'] = ( isset( $tags) ? $tags:array() );
+				
+				
+						};
+						
+					}
+					
+				}
+				unset($tags);
+				/*three*/
+				
+				foreach( $data['showpage_items']  as  $showpage_item){
+					foreach( $showpage_item  as  $key => $value){
+						$showpage_item[$key]=$value;
+						if( $key == 'showpage_item3_image_id'){
+							
+								$join_array = array(
+									'tags' => 'tags.id = images_tags.tag_id'
+									);
+							
+							
+								$tags_raw = $this->my_database_model->select_from_table( 
+																				$table = 'images_tags', 
+																				$select_what = 'name',
+																				$where_array = array(
+																					'images_tags.showpage_item_id' => $value
+																				), 
+																				$use_order = TRUE, 
+																				$order_field = 'name', 
+																				$order_direction = 'asc', 
+																				$limit = -1,
+																				$use_join = TRUE, 
+																				$join_array
+																				);	
+																				
+								$tags_raw = $this->tools->object_to_array($tags_raw);								
+								foreach( $tags_raw  as  $tag){
+									foreach( $tag  as  $value){
+										$tags[] = $value;
+									}
+								}
+								$data['item3_tags'] = ( isset( $tags) ? $tags:array() );
+				
+				
+						};
+						
+					}
+					
+				}
+				unset($tags);
+				/*four*/
+				
+				
+				foreach( $data['showpage_items']  as  $showpage_item){
+					foreach( $showpage_item  as  $key => $value){
+						$showpage_item[$key]=$value;
+						if( $key == 'showpage_item4_image_id'){
+							
+								$join_array = array(
+									'tags' => 'tags.id = images_tags.tag_id'
+									);
+							
+							
+								$tags_raw = $this->my_database_model->select_from_table( 
+																				$table = 'images_tags', 
+																				$select_what = 'name',
+																				$where_array = array(
+																					'images_tags.showpage_item_id' => $value
+																				), 
+																				$use_order = TRUE, 
+																				$order_field = 'name', 
+																				$order_direction = 'asc', 
+																				$limit = -1,
+																				$use_join = TRUE, 
+																				$join_array
+																				);	
+																				
+								$tags_raw = $this->tools->object_to_array($tags_raw);								
+								foreach( $tags_raw  as  $tag){
+									foreach( $tag  as  $value){
+										$tags[] = $value;
+									}
+								}
+								$data['item4_tags'] = ( isset( $tags) ? $tags:array() );
+				
+				
+						};
+						
+					}
+					
+				}
 				
 
 				$this->load->view('main/showpage/items/form_view', 
@@ -159,147 +340,9 @@ class Main extends CI_Controller {
 	}
 	
 	
-	/**
-	 * get_showpage_cast_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_showpage_cast_form
-	 * @access public
-	 */
-	 
-	 
-	public function get_showpage_cast_form(){
-		
-				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
-							$where_array = array( 'id' => $this->input->get('showpage_cast_item_id')) 
-				);	
-				
-				$this->load->view('main/showpage_cast/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}
-	
 
 
-	
-	/**
-	 * get_showpage_photos_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_showpage_photos_form
-	 * @access public
-	 */
-	 
-	 
-	public function get_showpage_photos_form(){
-		
-				$data['showpage_photos_items'] = $this->query->get_showpage_photos_items(
-							$where_array = array( 'id' => $this->input->get('showpage_photos_item_id')) 
-				);	
-				
 
-				$this->load->view('main/showpage_photos/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}
-	
-	/**
-	 * get_showpage_mobile_gallery_photo__form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_showpage_iphone_gallery_photo__form
-	 * @access public
-	 */
-	 
-	 
-	public function get_showpage_mobile_gallery_mobile_form(){
-		
-				$data['showpage_mobile_gallery_photo_items'] = $this->query->get_showpage_mobile_gallery_photo_items(
-							$where_array = array( 'id' => $this->input->get('showpage_mobile_gallery_photo_item_id')) 
-				);	
-
-
-				$this->load->view('main/showpage_mobile_gallery_photo/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}
-	
-	/**
-	 * get_showpage_android_gallery_photo_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_showpage_android_gallery_photo__form
-	 * @access public
-	 */
-	 
-	 
-	public function get_showpage_android_gallery_photo_form(){
-		
-				$data['showpage_android_gallery_photo_items'] = $this->query->get_showpage_android_gallery_photo_items(
-							$where_array = array( 'id' => $this->input->get('showpage_android_gallery_photo_item_id')) 
-				);	
-				
-				$this->load->view('main/showpage_android_gallery_photo/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}	
-	
-	/**
-	 * showpage_feature
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/showpage_feature
-	 * @access public
-	 */
-	 
-	 
-	public function get_showpage_feature_form(){
-		
-				$data['showpage_feature_items'] = $this->query->get_showpage_feature_items(
-							$where_array = array( 'id' => $this->input->get('showpage_feature_item_id')) 
-				);	
-				
-				$this->load->view('main/showpage_feature/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}
-
-	/**
-	 * get_carousel_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_carousel_form
-	 * @access public
-	 */
-	 
-	 
-	public function get_carousel_form(){
-		
-				$data['carousel_items'] = $this->query->get_carousel_items(
-							$where_array = array( 'id' => $this->input->get('carousel_item_id')) 
-				);	
-				
-	
-				$data['showpage_items'] = $this->query->get_showpage_items();	
-
-
-				$this->load->view('main/carousel/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}
-	
 	
 	
 	/**
@@ -1731,43 +1774,16 @@ submitted
 function t(){
 	
 	
-				$table = 'showpage_items_images';
+				$table = 'tags';
 				
-//				$this->my_database_model->	create_generic_table($table );
+				$this->my_database_model->	create_generic_table($table );
 				
 				
 				
 				$fields_array = array(
 				
-															'facebook_top' => array(
-				                                               'type' => 'int(11)'),
-				
-															'facebook_left' => array(
-				                                               'type' => 'int(11)'),   
-				
-															'facebook_width' => array(
-				                                               'type' => 'int(11)'),
-				
-															'facebook_height' => array(
-				                                               'type' => 'int(11)'),  
-				
-															'video_top' => array(
-				                                               'type' => 'int(11)'),
-				
-															'video_left' => array(
-				                                               'type' => 'int(11)'),  	
-				
-															'video_width' => array(
-				                                               'type' => 'int(11)'),
-				
-															'video_height' => array(
-				                                               'type' => 'int(11)'),  		
-				                                               
-															'facebook_link' => array(
-				                                               'type' => 'int(11)'),
-				
-															'video_link' => array(
-				                                               'type' => 'int(11)'),  						                                               		                                               			                                               				                                                                                           
+															'name' => array(
+				                                               'type' => 'varchar(255)')				                                               		                                               			                                               				                                                                                           
 				              ); 
 				              
 				$this->my_database_model->add_column_to_table_if_exist(
@@ -1775,7 +1791,24 @@ function t(){
 					$fields_array
 				);
               
-                      
+				$table = 'images_tags';
+				
+				$this->my_database_model->	create_generic_table($table );
+				
+				
+				
+				$fields_array = array(
+				
+															'tag_id' => array(
+				                                               'type' => 'int(11)')	,			                                               		                                               			                                               				                                                                                           
+															'showpage_item_id' => array(
+				                                               'type' => 'int(11)')					                                               
+				              ); 
+				              
+				$this->my_database_model->add_column_to_table_if_exist(
+					$table, 
+					$fields_array
+				);                      
     
   }  
 

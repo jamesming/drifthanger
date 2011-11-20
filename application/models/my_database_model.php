@@ -379,7 +379,7 @@ function check_if_exist($where_array, $table ){
 	$query = $this->db->get();
 
 	
-	if( $query->num_rows() ){
+	if( $query->num_rows()  ){
 		return TRUE;
 	}else{
 		return FALSE;

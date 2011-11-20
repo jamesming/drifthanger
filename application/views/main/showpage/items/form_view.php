@@ -29,6 +29,7 @@ padding-bottom:5px;
 
 form#image_showpage_item_form table#main div.image_assets{
 margin-top:25px;
+clear:both;
 }
 
 form#image_showpage_item_form div{
@@ -159,12 +160,7 @@ display:none;
 				</td>
 			</tr>
 
-			<tr   class='hide ' >
-				<td  class='main_table '> Keywords
-				</td>
-				<td  class='main_table '><input name="keywords" id="" type="text" value="<?php echo $data['showpage_items'][0]['keywords']    ?>">
-				</td>
-			</tr>
+
 		
 			<tr  class='hide '>
 				<td   class='main_table ' colspan=2>
@@ -176,32 +172,66 @@ display:none;
 
 			<tr>
 				<td class='main_table image_assets' colspan=2>
-					<div  class=' image_assets' >
-							<div image_type='showpage_hero' image_type_id='10' class='float_left image_div'  id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_hero_items_image_id']    ?>'>
-							</div>
-							
 					
+<style>
+.image_div{
+float:left;	
+}
+.tags{
+	margin-left:100px;
+	width:200px;
+	height:150px;
+	float:left;	
+}
+</style>
+					<div  class=' image_assets' >
+							<div image_type='showpage_hero' image_type_id='10' class='image_div'  id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_items_image_id'] ) ? $data['showpage_items'][0]['showpage_hero_items_image_id'] :0 )   ?>'>
+							</div>
+							<textarea  class='tags ' ><?php     
+								
+								foreach(  $data['showpage_hero_tags']   as  $tag){
+									echo $tag.', ';
+								}
+								
+							?></textarea>
 					</div>
 					
 					<div  class=' image_assets' >
-							<div image_type='item2' image_type_id='42' class='float_left image_div'  id='image_item2' showpage_items_image_id='<?php echo ( isset($data['showpage_items'][0]['showpage_item2_image_id']  ) ? $data['showpage_items'][0]['showpage_item2_image_id'] :0 )   ?>'>
+							<div image_type='item2' image_type_id='42' class='image_div'  id='image_item2' showpage_items_image_id='<?php echo ( isset($data['showpage_items'][0]['showpage_item2_image_id']  ) ? $data['showpage_items'][0]['showpage_item2_image_id'] :0 )   ?>'>
 							</div>
-							
-					
+							<textarea  class='tags ' ><?php     
+								
+								foreach(  $data['item2_tags']   as  $tag){
+									echo $tag.', ';
+								}
+								
+							?></textarea>
 					</div>					
 					
 					<div  class=' image_assets' >
-							<div image_type='item3' image_type_id='43' class='float_left image_div'  id='image_item3' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item3_image_id']:0)    ?>'>
+							<div image_type='item3' image_type_id='43' class='image_div'  id='image_item3' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item3_image_id']:0)    ?>'>
 							</div>
-							
-					
+							<textarea  class='tags ' ><?php     
+								
+								foreach(  $data['item3_tags']   as  $tag){
+									echo $tag.', ';
+								}
+								
+							?></textarea>
 					</div>					
 					<div  class=' image_assets' >
-							<div image_type='item4' image_type_id='44' class='float_left image_div'  id='image_item4' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item4_image_id']:0 )  ?>'>
+							<div image_type='item4' image_type_id='44' class='image_div'  id='image_item4' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item4_image_id']:0 )  ?>'>
 							</div>
-							
-					
+							<textarea  class='tags ' ><?php     
+								
+								foreach(  $data['item4_tags']   as  $tag){
+									echo $tag.', ';
+								}
+								
+							?></textarea>
 					</div>
+					
+					
 				</td>
 			</tr>	
 	
@@ -238,27 +268,28 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 	$(document).ready(function() {
 
-				$('#iphone_directTo_div input').each(function(event) {
-					if( $(this).val() == <?php  echo ( isset( $data['showpage_items'][0]['iphone_directTo']) ? $data['showpage_items'][0]['iphone_directTo']:0 )   ?>){		
-							$(this).attr("checked","checked");
-					};
-				});	
 
-				$('#showpage_title_left_margin').blur(function(event) {
-
+				$('.tags').blur(function(event) {
+					
+					
+					var showpage_items_image_id = $(this).prev().attr('showpage_items_image_id');
+					var tags = $(this).val();
+					
+					if( showpage_items_image_id != 0 && tags !='' ){
+						
+						$.post("<?php echo base_url(). 'index.php/main/update_tags';    ?>",{
+							showpage_items_image_id:showpage_items_image_id,
+							tags:tags
+							},function(data) {
 							
-						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-							table:'showpage_items',
-							id:$(this).attr('showpage_items_id'),
-							crud:'update',
-							set_what_array:$(this).serialize()
-							},function(xml) {
-							
-								var status = $(xml).find('status').text();
-								var message = $(xml).find('message').text();
+							//	alert(data);
 								
 								
 						});		
+						
+					};
+							
+
 				});		
 		
 
@@ -298,20 +329,6 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 						);
 					})
 					
-				$('.image_div div.icon_container div.facebook')
-					.css({cursor:'pointer'})
-					.click(function(event) {
-						open_dialogue_facebook_link()();
-					})					
-		
-		
-				$('.image_div div.icon_container div.video')
-					.css({cursor:'pointer'})
-					.click(function(event) {
-						open_dialogue_video_link()();
-					})					
-		
-
 
 
 				$('.submit').css({cursor:'pointer'}).click(function(event) {
