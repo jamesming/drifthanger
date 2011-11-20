@@ -50,7 +50,7 @@ min-height:450px;
 }
 
 .middle .answer-boxes-container {
-/*    padding-left: 300px;*/
+padding-left: 300px;
     margin-top: 24px;
 }
 .middle .answer-boxes-container .answer-box{
@@ -136,7 +136,11 @@ min-height:120px;
 			<div><?php  echo $data['item.3.image_title']   ?>	
 			</div>
 		</div>
-				
+		<div  class='answer-box '   style='display:none'  >
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item4_image_id']   ?>/image.png'   images_item_id='<?php echo $data['showpage_item4_image_id']   ?>' />	
+			<div><?php  echo $data['item.4.image_title']   ?>	
+			</div>
+		</div>							
 		
 			
 		
