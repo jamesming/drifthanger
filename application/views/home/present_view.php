@@ -35,16 +35,18 @@ height:5px;
 background:white;	
 }
 .middle{
-background:white;
+background-image: url(<?php  echo base_url()   ?>images/Page2_bg.jpg);
+background-position: top, center;
+background-repeat:repeat;
 min-height:450px;	
 }
 .middle .left-middle{
-background:yellow;	
+
 min-height:650px;
 }
 
 .middle .right-middle{
-background:orange;	
+border:2px solid red;
 min-height:650px;
 }
 .steps{
@@ -97,9 +99,9 @@ min-height:120px;
 <div  class='middle ' >
 
 
-		<div  class=' span-10 left-middle' >test
+		<div  class=' span-6 left-middle' >test
 		</div>
-		<div class=' span-15 last right-middle' >test
+		<div class=' span-19 last right-middle' >test
 		</div>
 	 
 </div>

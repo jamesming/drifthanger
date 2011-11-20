@@ -28,8 +28,40 @@ class Home extends CI_Controller {
 				$this->input->get()
 		 );
 		 
-		$data = $data['showpage_items'][0];
+		
+		
 
+
+		 
+	
+		if( $this->input->get('page') != ''  ){
+			$page = $this->input->get('page');
+		}else{
+			$page = '0';
+		};
+
+
+		$data = $data['showpage_items'][$page];
+		
+		
+		switch ( $page ) {
+		
+		  case '0':
+				$data['nextpage'] = 1;
+		  break;
+
+		  case '1':
+				$data['nextpage'] = 2;
+		  break;		
+
+		  case '2':
+				$data['nextpage'] = 3;
+		  break;				  
+		  
+		};		
+		
+		
+		
 		$data['item.1.image_title']  = $this->query->get_title_image( 
 					$data['showpage_hero_items_image_id'] 
 				);

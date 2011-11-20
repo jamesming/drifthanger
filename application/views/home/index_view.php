@@ -35,7 +35,9 @@ height:5px;
 background:white;	
 }
 .middle{
-background:#5CB6BE;
+background-image: url(<?php  echo base_url()   ?>images/Page1_bg.jpg);
+background-position: center, center;
+background-repeat: no-repeat;
 min-height:450px;	
 }
 .middle .first-question{
@@ -63,14 +65,7 @@ min-height:450px;
     width: 222px;
     margin-right: 13px;
 }
-.steps{
-clear:both;
-padding-top:45px;
-height:30px;
-background-image: url(<?php  echo base_url()   ?>images/Steps.png);
-background-position: center, center;
-background-repeat: no-repeat;
-}
+
 .bottom{
 background:#B6B6B6;
 min-height:120px;		
@@ -140,9 +135,51 @@ min-height:120px;
 			
 		
 	</div>
-
-	<div  class='steps ' >&nbsp;
+	<div>&nbsp;
 	</div>
+			<style>
+				
+			<?php if( $data['nextpage'] == 1){?>
+				
+						.steps{
+						    background-image: url("http://localhost/drifthanger/images/progressbars.png");
+						    background-position: 0 -31px;
+						    background-repeat: no-repeat;
+						    clear: both;
+						    height: 0;
+						    margin-left: 255px;
+						    padding-top: 33px;
+						    width: 445px;
+						}				
+				
+			<?php }elseif($data['nextpage'] == 2) {?>
+						.steps{
+								    background-image: url("http://localhost/drifthanger/images/progressbars.png");
+								    background-position: 0 -61px;
+								    background-repeat: no-repeat;
+								    clear: both;
+								    height: 0;
+								    margin-left: 255px;
+								    padding-top: 33px;
+								    width: 445px;
+						}				
+			<?php }elseif($data['nextpage'] == 3){ ?>
+					.steps{
+					    background-image: url("http://localhost/drifthanger/images/progressbars.png");
+					    background-position: 0 -91px;
+					    background-repeat: no-repeat;
+					    clear: both;
+					    height: 0;
+					    margin-left: 255px;
+					    padding-top: 33px;
+					    width: 445px;
+					}				
+			<?php } ?>
+
+			</style>
+			
+			<div  class='steps ' >&nbsp;
+			</div>
 	
 	 
 </div>
@@ -173,7 +210,18 @@ $(document).ready(function() {
 		});	
 		
 		$('.answer-box img').css({cursor:'pointer'}).click(function(event) {
-			document.location.href='<?php echo  base_url();   ?>index.php/home/present?images_item_id='+$(this).attr('images_item_id');
+			
+			<?php if( $data['nextpage'] == 3){?>
+				
+					document.location.href='<?php echo  base_url();   ?>index.php/home/present?images_item_id='+$(this).attr('images_item_id');
+				
+			<?php }else{?>
+			
+					document.location.href='<?php echo  base_url();   ?>index.php/home?page=<?php echo ( isset($data['nextpage'] ) ? $data['nextpage']:'' );   ?>&images_item_id='+$(this).attr('images_item_id');
+			
+			<?php } ?>
+			
+			
 		});	
 
 });		
