@@ -110,7 +110,7 @@ min-height:120px;
 				</ul>
 			</div>
 			<div  class='slogan ' >
-				Hi there, traveler!<br />Drift Hanger helps you discover new experiences based on your interest and budget.
+				Hi there, Traveler!<br />Drifthangar helps you discover new experiences based on your interest and budget.
 			</div>
 		</div>		
 	</div>
