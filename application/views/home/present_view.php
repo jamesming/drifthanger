@@ -35,9 +35,7 @@ height:5px;
 background:white;	
 }
 .middle{
-/*background-image: url(<?php  echo base_url()   ?>images/Page2_bg.jpg);
-background-position: top, center;
-background-repeat:repeat;*/
+
 min-height:450px;	
 }
 .middle .left-middle{
