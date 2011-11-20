@@ -38,7 +38,7 @@ background:white;
 /*	background:#71C1CA;*/
 background-image: url(<?php  echo base_url()   ?>images/Page1_bg.jpg);
 background-position: center, center;
-background-repeat: no-repeat;
+background-repeat: repeat;
 min-height:450px;	
 }
 .middle .first-question{
