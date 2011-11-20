@@ -26,15 +26,15 @@
 					padding:5px;
 					}
 								#showpage_item_outside_container   .showpage_item_row .name_of{
-								width:110px;
 								font-weight:bold;
 								font-size:20px;
 								padding-top:0px;
-								text-align:center;
 								color:gray;
 								}
 								
-											
+								#showpage_item_outside_container   .showpage_item_row .square_image{
+								margin-right:20px;
+								}											
 																
 																							
 								#showpage_item_outside_container   .showpage_item_row .showpage_item_trash{
@@ -64,38 +64,42 @@
 					<div  class='clearfix showpage_item_row'>
 						
 						
-						<div  class='float_left name_of '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
+						<div  class='name_of '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $showpage_item['name']   ?>
 						</div>
-						
-						
-						<div  class='float_left '  >
-							<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $showpage_item ['showpage_hero_items_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>'/>
+						<div>
+	
+													<div  class='float_left square_image'  >
+														<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+								  	echo $showpage_item ['showpage_hero_items_image_id']; 
+								?>/image.png?random=<?php echo rand(5,12334)    ?>'/>
+													</div>
+													
+													
+													<div  class='float_left  square_image'  >
+														<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+								  	echo $showpage_item ['showpage_item2_image_id']; 
+								?>/image.png?random=<?php echo rand(5,12334)    ?>'/>
+													</div>			
+													
+													
+													<div  class='float_left  square_image'  >
+														<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+								  	echo $showpage_item ['showpage_item3_image_id']; 
+								?>/image.png?random=<?php echo rand(5,12334)    ?>'/>
+													</div>		
+													
+													
+													<div  class='float_left  square_image'  >
+														<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+								  	echo $showpage_item['showpage_item4_image_id']; 
+								?>/image.png?random=<?php echo rand(5,12334)    ?>'/>
+													</div>		
+																				
+							
+							
 						</div>
-						
-						
-						<div  class='float_left '  >
-							<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $showpage_item ['showpage_item2_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>'/>
-						</div>			
-						
-						
-						<div  class='float_left '  >
-							<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $showpage_item ['showpage_item3_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>'/>
-						</div>		
-						
-						
-						<div  class='float_left '  >
-							<img   style='width:200px'  src='<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo $showpage_item['showpage_item4_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>'/>
-						</div>		
-						
+												
 						
 															
 						<div  class='float_left show_page_cast hide'  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >

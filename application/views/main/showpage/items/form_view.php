@@ -42,8 +42,8 @@ form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:300px;
-	height:300px;
+	width:222px;
+	height:222px;
 	margin-left: 72px;
 }
 
@@ -54,8 +54,8 @@ form#image_showpage_item_form div#image_item2{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:300px;
-	height:300px;
+	width:222px;
+	height:222px;
 	margin-left: 72px;
 }
 /* item3 */
@@ -65,8 +65,8 @@ form#image_showpage_item_form div#image_item3{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:300px;
-	height:300px;
+	width:222px;
+	height:222px;
 	margin-left: 72px;
 }
 /* item4 */
@@ -76,8 +76,8 @@ form#image_showpage_item_form div#image_item4{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:300px;
-	height:300px;
+	width:222px;
+	height:222px;
 	margin-left: 72px;
 }
 form#image_showpage_item_form #textarea_div{
@@ -244,6 +244,17 @@ float:left;
 
 <div id="dialog" title="Upload Image"     > 
 
+		<table id='submit_jcrop_table' width='100%'    style='display:none'    >
+			<tr>
+				<td width='55%' align=right>Crop image then&nbsp;&nbsp;</td>
+				<td>
+					<div id='submit' class='rounded_border cursor_pointer'    >
+						submit
+					</div>	
+				</td>
+			</tr>
+		</table>
+		
 		<iframe id="iframe_src_for_image" frameborder="0" scrolling=no src=""  >
 			
 		    <p>Your browser does not support iframes.</p>
@@ -381,6 +392,24 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				}, 100);
 				
 				
+				
+				
+				
+				$('#submit').click(function(event) {  // THIS IS FOR SUBMITTING JCROP
+						//document.getElementsByTagName('iframe')[7].contentWindow.submitCropForm();
+					
+						$('iframe').each(function(index) { 
+							try { this.contentWindow.submitCropForm(); } 
+							catch (e) { } 
+						});
+					
+					
+				});
+				
+				
+				
+				
+				
   });
     
 
@@ -457,7 +486,21 @@ function open_dialogue_upload_image(
 						
 };	
 	
-	
+function open_jcrop( showpage_items_image_id  ){
+
+		$("#iframe_src_for_image").css({width:'540px',height:'420px'}).attr('src','<?php echo base_url();    ?>index.php/main/iframe_jcrop_form?showpage_image_item_id=' + showpage_items_image_id);
+		
+		$( "#dialog" ).dialog({
+			position:[6,10],
+			height: 1150,
+			height: 570,
+			zIndex: -10,
+			width: 590,
+			resizable: false
+			
+			})	
+
+};
 	
 </script>
 
