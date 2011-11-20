@@ -80,6 +80,14 @@ min-height:120px;
 </style>
 
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
+
+<script src="<?php echo  base_url();   ?>js/cufon-yui.js" type="text/javascript"></script>
+<script src="<?php echo  base_url();   ?>js/Rockwell_700.font.js" type="text/javascript"></script>
+<script type="text/javascript">
+               Cufon.replace('.font'); // Works without a selector engine
+               Cufon.replace('#sub1'); // Requires a selector engine for IE 6-7, see above
+</script>
+
 </head>
 
 <html>
@@ -110,7 +118,7 @@ min-height:120px;
 <div  class='white-line ' >
 </div>
 <div  class='middle ' >
-	<div  class='first-question ' ><?php   echo $data['name']  ?>
+	<div  class='first-question font' ><?php   echo $data['name']  ?>
 	</div>
 	<div  class='answer-boxes-container ' >
 		<div  class='answer-box ' >

@@ -99,7 +99,15 @@ class Home extends CI_Controller {
 		
 	}
 
-
+	public function orbitz(){
+		
+		$data = array();
+	
+		$this->load->view('home/orbitz_view', 
+			array('data' =>  $data )
+		);
+		
+	}
 
 	/**
 	 * login

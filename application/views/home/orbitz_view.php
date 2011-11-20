@@ -35,7 +35,7 @@ height:5px;
 background:white;	
 }
 body{
-background-image: url(<?php  echo base_url()   ?>images/Screen_Page2.jpg);
+background-image: url(<?php  echo base_url()   ?>images/Screen_Page3.jpg);
 background-position: center top;
 min-height:450px;	
 }
@@ -77,11 +77,13 @@ min-height:120px;
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() {
 
-		$('body').click(function(event) {
-					document.location.href='<?php echo  base_url();   ?>index.php/home/orbitz';
+		$('#logo').click(function(event) {			
+						document.location.href='<?php echo  base_url();   ?>';
 		});	
-
-
+		
+		$('.answer-box img').css({cursor:'pointer'}).click(function(event) {
+			document.location.href='<?php echo  base_url();   ?>index.php/home/present?images_item_id='+$(this).attr('images_item_id');
+		});	
 
 });		
 
