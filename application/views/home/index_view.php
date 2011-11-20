@@ -152,7 +152,7 @@ min-height:120px;
 			<?php if( $data['nextpage'] == 1){?>
 				
 						.steps{
-						    background-image: url("http://localhost/drifthanger/images/progressbars.png");
+						    background-image: url(http://localhost/drifthanger/images/progressbars.png);
 						    background-position: 0 -31px;
 						    background-repeat: no-repeat;
 						    clear: both;
@@ -164,7 +164,7 @@ min-height:120px;
 				
 			<?php }elseif($data['nextpage'] == 2) {?>
 						.steps{
-								    background-image: url("http://localhost/drifthanger/images/progressbars.png");
+								    background-image: url(http://localhost/drifthanger/images/progressbars.png);
 								    background-position: 0 -61px;
 								    background-repeat: no-repeat;
 								    clear: both;
@@ -175,7 +175,7 @@ min-height:120px;
 						}				
 			<?php }elseif($data['nextpage'] == 3){ ?>
 					.steps{
-					    background-image: url("http://localhost/drifthanger/images/progressbars.png");
+					    background-image: url(http://localhost/drifthanger/images/progressbars.png);
 					    background-position: 0 -91px;
 					    background-repeat: no-repeat;
 					    clear: both;
