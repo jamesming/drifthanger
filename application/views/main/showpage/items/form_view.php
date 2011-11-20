@@ -39,7 +39,7 @@ form#image_showpage_item_form div{
 form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_hero_items_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:222px;
@@ -51,7 +51,7 @@ form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 form#image_showpage_item_form div#image_item2{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_item2_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:222px;
@@ -62,7 +62,7 @@ form#image_showpage_item_form div#image_item2{
 form#image_showpage_item_form div#image_item3{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_item3_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:222px;
@@ -73,7 +73,7 @@ form#image_showpage_item_form div#image_item3{
 form#image_showpage_item_form div#image_item4{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_item4_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:222px;

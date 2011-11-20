@@ -751,7 +751,7 @@ $dir_path = 'uploads/'.$what_item.'_items_images/'  .  $image_item_id . '/';
 		$this->tools->resize_this(  $full_path = $dir_path . '/' . 'image.png' , $width = $new_width, $height = $new_height);
 
 
-		$new_tiny_width  = '222';
+		$new_tiny_width  = '90';
 		$new_tiny_height = $this->tools->get_new_size_of (
 			$what = 'height', 
 			$based_on_new = $new_width, 
