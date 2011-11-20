@@ -15,7 +15,7 @@ font-size:16px;
 }
 form#image_destination_item_form input[type=text]{
 padding:6px 5px;
-width:490px;	
+width:430px;	
 }
 
 form#image_destination_item_form table#main {
@@ -205,15 +205,15 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 					
 					var destination_items_image_id = $(this).prev().attr('destination_items_image_id');
 					var tags = $(this).val();
-					
+
 					if( destination_items_image_id != 0 && tags !='' ){
-						
-						$.post("<?php echo base_url(). 'index.php/main/update_tags';    ?>",{
+
+						$.post("<?php echo base_url(). 'index.php/main/update_destination_items_tags';    ?>",{
 							destination_items_image_id:destination_items_image_id,
 							tags:tags
 							},function(data) {
 							
-							//	alert(data);
+							 //alert(data);
 								
 								
 						});		

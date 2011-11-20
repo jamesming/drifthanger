@@ -163,7 +163,69 @@ class Main extends CI_Controller {
 		
 	}
 	
-	
+	public function update_destination_items_tags(){
+		
+
+		$destination_items_image_id = $this->input->post('destination_items_image_id');
+		$tags = explode(',', $this->input->post('tags'));
+
+		
+		foreach( $tags  as   $tag){
+			
+			
+				/* TAGS TABLE FIRST */
+				$table = 'tags';
+				$where_array = array(
+						'name' => trim($tag)
+				);
+				
+				if( $this->my_database_model->count_records( $table,  $where_array ) != 0 ){
+					
+					$tags = $this->my_database_model->select_from_table( 
+					$table, 
+					$select_what = 'id', 
+					$where_array
+					);
+					
+					$tag_id  =  $tags[0]->id;
+					
+				}else{
+					$tag_id  = $this->my_database_model->insert_table(
+													'tags', 
+													$insert_what = $where_array
+													); 
+					
+				};			
+				
+				
+
+				/* CHECK IMAGES_TAGS*/
+				$table = 'destinations_items_tags';
+				$where_array = array(
+						'tag_id' => $tag_id,
+						'destination_item_id' => $destination_items_image_id
+				);
+
+				$result = $this->my_database_model->check_if_exist(
+					$where_array, 
+					$table 
+				);
+		
+				if( $result == TRUE ){
+					
+					
+				}else{
+					$insert_id = $this->my_database_model->insert_table(
+													$table, 
+													$insert_what = $where_array
+													); 
+				};	
+			
+		}
+		
+
+		
+	}	
 	
 	/**
 	 * get_showpage_form
