@@ -596,7 +596,7 @@ class Main extends CI_Controller {
 		
 		$path_array = array(
 			'folder'=> $what_item.'_items_images', 
-			$what_item.'_items_image_id'=> $items_image_id
+			'items_image_id' => $items_image_id
 		);
 		
 		$upload_path = $this->tools->set_directory_for_upload( $path_array );
@@ -627,7 +627,7 @@ class Main extends CI_Controller {
 									<script type="text/javascript" language="Javascript">
 												
 												window.parent.$('#submit_jcrop_table').show();
-												window.parent.open_jcrop( <?php echo $this->input->post('items_image_id')    ?>); 
+												window.parent.open_jcrop( <?php echo $items_image_id    ?>); 
 												
 												
 									</script>
