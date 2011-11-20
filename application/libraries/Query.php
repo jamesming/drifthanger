@@ -189,9 +189,7 @@ function query(){
 			foreach( $showpage_items  as   $showpage_item){
 				foreach( $showpage_item  as  $key => $value){
 					$showpage_item[$key]=$value;
-					
 
-					$showpage_item['tags']='test';
 				}
 				$new_showpage_items[] = $showpage_item;
 				

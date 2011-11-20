@@ -22,7 +22,20 @@ class Home extends CI_Controller {
 	 */
 	 
 	public function index(){
-		$this->login();    
+		
+
+		$data = $this->custom->prepare_showpage_items( 
+				'showpage',
+				$this->input->get()
+		 );
+
+//echo '<pre>';print_r( $data   );echo '</pre>';  exit;
+
+		$this->load->view('home/index_view', 
+			array('data' => $data)
+		);
+		
+		
 	}
 	
 

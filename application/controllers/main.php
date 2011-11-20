@@ -30,19 +30,7 @@ class Main extends CI_Controller {
 	 
 	public function index(){
 
-				// REMOVE ALL items THAT DO NOT CONTAIN CONTENT
-				if( $this->uri->segment(3) != 'calendar' &&
-						$this->uri->segment(3) != ''
-				){
-					
-						$this->my_database_model->delete_from_table(
-								$table = $this->uri->segment(3).'_items', 
-								$where_array = array(
-																				'updated' => '0000-00-00 00:00:00' 
-																		)
-							);
-					
-				};
+
 
 
 				$segment4 = $this->uri->segment(4);
@@ -69,7 +57,15 @@ class Main extends CI_Controller {
 			    
 			    
 			    case 'showpage':
+
 		
+						$this->my_database_model->delete_from_table(
+								$table = 'showpage_items', 
+								$where_array = array(
+																				'updated' => '0000-00-00 00:00:00' 
+																		)
+							);
+
 						$data = $this->custom->prepare_showpage_items( 
 								$segment4,
 								$this->input->get()
@@ -79,6 +75,14 @@ class Main extends CI_Controller {
 			    
 			    
 			    case 'destination':
+			    
+			    
+						$this->my_database_model->delete_from_table(
+								$table = 'destination_items', 
+								$where_array = array(
+																				'updated' => '0000-00-00 00:00:00' 
+																		)
+							);
 		
 						$data = $this->custom->prepare_destination_items( 
 								$segment4,
