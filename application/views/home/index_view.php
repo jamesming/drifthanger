@@ -157,7 +157,7 @@ min-height:120px;
 						    background-repeat: no-repeat;
 						    clear: both;
 						    height: 0;
-						    margin-left: 255px;
+						    margin-left: 455px;
 						    padding-top: 33px;
 						    width: 445px;
 						}				
@@ -169,7 +169,7 @@ min-height:120px;
 								    background-repeat: no-repeat;
 								    clear: both;
 								    height: 0;
-								    margin-left: 255px;
+								    margin-left: 455px;
 								    padding-top: 33px;
 								    width: 445px;
 						}				
@@ -180,7 +180,7 @@ min-height:120px;
 					    background-repeat: no-repeat;
 					    clear: both;
 					    height: 0;
-					    margin-left: 255px;
+					    margin-left: 455px;
 					    padding-top: 33px;
 					    width: 445px;
 					}				
