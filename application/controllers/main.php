@@ -108,7 +108,13 @@ class Main extends CI_Controller {
 		$showpage_items_image_id = $this->input->post('showpage_items_image_id');
 		$tags = explode(',', $this->input->post('tags'));
 
-		
+
+		$this->my_database_model->delete_from_table('images_tags', array(
+				'showpage_item_id' => $showpage_items_image_id
+		));
+
+
+	
 		foreach( $tags  as   $tag){
 			
 			
@@ -136,26 +142,19 @@ class Main extends CI_Controller {
 					
 				};			
 				
-				/* CHECK IMAGES_TAGS*/
+				/* IMAGES_TAGS*/
 				$table = 'images_tags';
+
 				$where_array = array(
 						'tag_id' => $tag_id,
 						'showpage_item_id' => $showpage_items_image_id
 				);
-				$result = $this->my_database_model->check_if_exist(
-					$where_array, 
-					$table 
-				);
-		
-				if( $result == TRUE ){
-					
-					
-				}else{
+
 					$insert_id = $this->my_database_model->insert_table(
 													'images_tags', 
 													$insert_what = $where_array
 													); 
-				};	
+
 			
 		}
 		
@@ -185,7 +184,11 @@ class Main extends CI_Controller {
 		$destination_items_image_id = $this->input->post('destination_items_image_id');
 		$tags = explode(',', $this->input->post('tags'));
 
-		
+		$this->my_database_model->delete_from_table('destinations_items_tags', array(
+				'destination_item_id' => $destination_items_image_id
+		));
+				
+				
 		foreach( $tags  as   $tag){
 			
 			
@@ -215,27 +218,20 @@ class Main extends CI_Controller {
 				
 				
 
-				/* CHECK IMAGES_TAGS*/
+				/* IMAGES_TAGS*/
 				$table = 'destinations_items_tags';
+				
 				$where_array = array(
 						'tag_id' => $tag_id,
 						'destination_item_id' => $destination_items_image_id
 				);
 
-				$result = $this->my_database_model->check_if_exist(
-					$where_array, 
-					$table 
-				);
-		
-				if( $result == TRUE ){
-					
-					
-				}else{
+
 					$insert_id = $this->my_database_model->insert_table(
 													$table, 
 													$insert_what = $where_array
 													); 
-				};	
+
 			
 		}
 		
