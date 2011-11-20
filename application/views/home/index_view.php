@@ -50,6 +50,15 @@ min-height:450px;
     padding-left: 23px;
     margin-top: 24px;
 }
+.middle .answer-boxes-container .answer-box{
+    float:left;
+}
+.middle .answer-boxes-container .answer-box div{
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-size:23px;
+}
 .middle .answer-boxes-container img {
     width: 222px;
     margin-right: 13px;
@@ -103,13 +112,32 @@ min-height:120px;
 <div  class='white-line ' >
 </div>
 <div  class='middle ' >
-	<div  class='first-question ' ><?php   echo $data['showpage_items'][0]['name']  ?>
+	<div  class='first-question ' ><?php   echo $data['name']  ?>
 	</div>
-	<div  class='answer-boxes-container ' >	
-		<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_items'][0]['showpage_hero_items_image_id']   ?>/image.png'/>	
-		<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_items'][0]['showpage_item2_image_id']   ?>/image.png'/>	
-		<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_items'][0]['showpage_item3_image_id']   ?>/image.png'/>	
-		<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_items'][0]['showpage_item4_image_id']   ?>/image.png'/>	
+	<div  class='answer-boxes-container ' >
+		<div  class='answer-box ' >
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_hero_items_image_id']   ?>/image.png'/>
+			<div><?php  echo $data['item.1.image_title']   ?>	
+			</div>
+		</div>
+		<div  class='answer-box '>
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item2_image_id']   ?>/image.png'/>	
+			<div><?php  echo $data['item.2.image_title']   ?>	
+			</div>
+		</div>
+		<div  class='answer-box '>
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item3_image_id']   ?>/image.png'/>
+			<div><?php  echo $data['item.3.image_title']   ?>	
+			</div>
+		</div>
+		<div  class='answer-box '>
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item4_image_id']   ?>/image.png'/>	
+			<div><?php  echo $data['item.4.image_title']   ?>	
+			</div>
+		</div>							
+		
+			
+		
 	</div>
 
 	<div  class='steps ' >&nbsp;

@@ -22,17 +22,34 @@ class Home extends CI_Controller {
 	 */
 	 
 	public function index(){
-		
 
 		$data = $this->custom->prepare_showpage_items( 
 				'showpage',
 				$this->input->get()
 		 );
+		 
+		$data = $data['showpage_items'][0];
 
-//echo '<pre>';print_r( $data   );echo '</pre>';  exit;
+		$data['item.1.image_title']  = $this->query->get_title_image( 
+					$data['showpage_hero_items_image_id'] 
+				);
+				
+				
+		$data['item.2.image_title']  = $this->query->get_title_image( 
+					$data['showpage_item2_image_id'] 
+				);
+				
+		$data['item.3.image_title']  = $this->query->get_title_image( 
+					$data['showpage_item3_image_id'] 
+				);		
+				
+		$data['item.4.image_title']  = $this->query->get_title_image( 
+					$data['showpage_item4_image_id'] 
+				);		
+
 
 		$this->load->view('home/index_view', 
-			array('data' => $data)
+			array('data' =>  $data )
 		);
 		
 		

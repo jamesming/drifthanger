@@ -105,7 +105,22 @@ function query(){
 
 
 
+function get_title_image($showpage_items_image_id){
+	
 
+$data = $this->CI->my_database_model->select_from_table( 
+					$table = 'showpage_items_images', 
+					$select_what = 'image_title', 
+					$where_array = array(
+							'id' => $showpage_items_image_id
+						)
+					);		
+					
+					
+					
+return $data[0]->image_title;	
+					
+}
 
 
 /**
