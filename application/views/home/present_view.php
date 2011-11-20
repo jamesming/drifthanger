@@ -35,18 +35,18 @@ height:5px;
 background:white;	
 }
 .middle{
-background-image: url(<?php  echo base_url()   ?>images/Page2_bg.jpg);
+/*background-image: url(<?php  echo base_url()   ?>images/Page2_bg.jpg);
 background-position: top, center;
-background-repeat:repeat;
+background-repeat:repeat;*/
 min-height:450px;	
 }
 .middle .left-middle{
-
+background:#54696C;
 min-height:650px;
 }
 
 .middle .right-middle{
-border:2px solid red;
+	background:#5EBFC8;
 min-height:650px;
 }
 .steps{
