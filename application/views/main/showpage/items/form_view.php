@@ -190,7 +190,7 @@ float:left;
 </style>
 					<div  class=' image_assets' >
 							<div  class='image_div_container ' >
-									<input  class='image_title '  value="" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_items_image_id'] ) ? $data['showpage_items'][0]['showpage_hero_items_image_id'] :0 )   ?>'>
+									<input  class='image_title '  value="<?php  echo ( isset( $data['image_title.1'] ) ? $data['image_title.1'] :'' )   ?>" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_items_image_id'] ) ? $data['showpage_items'][0]['showpage_hero_items_image_id'] :0 )   ?>'>
 									<div image_type='showpage_hero' image_type_id='10' class='image_div'  id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_items_image_id'] ) ? $data['showpage_items'][0]['showpage_hero_items_image_id'] :0 )   ?>'>
 									</div>								
 							</div>
@@ -205,7 +205,7 @@ float:left;
 					
 					<div  class=' image_assets' >
 							<div  class='image_div_container ' >
-									<input  class='image_title '  value="" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset($data['showpage_items'][0]['showpage_item2_image_id']  ) ? $data['showpage_items'][0]['showpage_item2_image_id'] :0 )   ?>'>
+									<input  class='image_title '  value="<?php  echo ( isset( $data['image_title.2'] ) ? $data['image_title.2'] :'' )   ?>" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset($data['showpage_items'][0]['showpage_item2_image_id']  ) ? $data['showpage_items'][0]['showpage_item2_image_id'] :0 )   ?>'>
 								<div image_type='item2' image_type_id='42' class='image_div'  id='image_item2' showpage_items_image_id='<?php echo ( isset($data['showpage_items'][0]['showpage_item2_image_id']  ) ? $data['showpage_items'][0]['showpage_item2_image_id'] :0 )   ?>'>
 								</div>							
 							</div>
@@ -220,7 +220,7 @@ float:left;
 					
 					<div  class=' image_assets' >
 							<div  class='image_div_container ' >
-									<input  class='image_title '  value="" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item3_image_id']:0)    ?>'>
+									<input  class='image_title '  value="<?php  echo ( isset( $data['image_title.3'] ) ? $data['image_title.3'] :'' )   ?>" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item3_image_id']:0)    ?>'>
 									<div image_type='item3' image_type_id='43' class='image_div'  id='image_item3' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item3_image_id']:0)    ?>'>
 									</div>							
 							</div>
@@ -234,7 +234,7 @@ float:left;
 					</div>					
 					<div  class=' image_assets' >
 							<div  class='image_div_container ' >
-									<input  class='image_title '  value="" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item4_image_id']:0 )  ?>'>						
+									<input  class='image_title '  value="<?php  echo ( isset( $data['image_title.4'] ) ? $data['image_title.4'] :'' )   ?>" id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item4_image_id']:0 )  ?>'>						
 									<div image_type='item4' image_type_id='44' class='image_div'  id='image_item4' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_item3_image_id']) ? $data['showpage_items'][0]['showpage_item4_image_id']:0 )  ?>'>
 									</div>							
 							</div>
@@ -332,8 +332,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 							image_title:image_title
 							},function(data) {
 							
-							 alert(data);
-								
+							 
 								
 						});	
 						

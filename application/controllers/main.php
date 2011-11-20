@@ -261,6 +261,15 @@ class Main extends CI_Controller {
 
 
 				/* one */
+				$image_title = $this->my_database_model->select_from_table( 
+					$table = 'showpage_items_images', 
+					$select_what = 'image_title', 
+					$where_array = array(
+							'showpage_item_id' => $this->input->get('showpage_item_id'),
+							'image_type_id' => 10
+						)
+					);
+				$data['image_title.1'] = $image_title[0]->image_title; 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
@@ -301,7 +310,15 @@ class Main extends CI_Controller {
 				}
 				unset($tags);
 				/*two*/
-
+				$image_title = $this->my_database_model->select_from_table( 
+					$table = 'showpage_items_images', 
+					$select_what = 'image_title', 
+					$where_array = array(
+							'showpage_item_id' => $this->input->get('showpage_item_id'),
+							'image_type_id' => 42
+						)
+					);
+				$data['image_title.2'] = $image_title[0]->image_title; 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
@@ -342,7 +359,15 @@ class Main extends CI_Controller {
 				}
 				unset($tags);
 				/*three*/
-				
+				$image_title = $this->my_database_model->select_from_table( 
+					$table = 'showpage_items_images', 
+					$select_what = 'image_title', 
+					$where_array = array(
+							'showpage_item_id' => $this->input->get('showpage_item_id'),
+							'image_type_id' => 43
+						)
+					);
+				$data['image_title.3'] = $image_title[0]->image_title; 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
@@ -383,8 +408,15 @@ class Main extends CI_Controller {
 				}
 				unset($tags);
 				/*four*/
-				
-				
+				$image_title = $this->my_database_model->select_from_table( 
+					$table = 'showpage_items_images', 
+					$select_what = 'image_title', 
+					$where_array = array(
+							'showpage_item_id' => $this->input->get('showpage_item_id'),
+							'image_type_id' => 44
+						)
+					);
+				$data['image_title.4'] = $image_title[0]->image_title; 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
