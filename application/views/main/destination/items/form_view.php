@@ -109,11 +109,15 @@ display:none;
 			<tr>
 				<td  class='main_table ' > Destination
 				</td>
-				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['destination_items'][0]['name']    ?>"> <input  class=' submit' name="" type="button" value="submit">
+				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['destination_items'][0]['name']    ?>"> 
 				</td>
 			</tr>
-
-
+			<tr>
+				<td  class='main_table ' >Slogan
+				</td>
+				<td  class='main_table '><input name="slogan" id="" type="text" value="<?php echo ( isset( $data['destination_items'][0]['slogan']) ? $data['destination_items'][0]['slogan']:'' )     ?>"> <input  class=' submit' name="" type="button" value="submit">
+				</td>
+			</tr>
 		
 			<tr  >
 				<td   class='main_table ' colspan=2>
