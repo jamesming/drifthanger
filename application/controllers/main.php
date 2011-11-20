@@ -269,7 +269,7 @@ class Main extends CI_Controller {
 							'image_type_id' => 10
 						)
 					);
-				$data['image_title.1'] = $image_title[0]->image_title; 
+				$data['image_title.1'] = ( count ($image_title) > 0 ?  $image_title[0]->image_title:'' ); 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
@@ -318,7 +318,7 @@ class Main extends CI_Controller {
 							'image_type_id' => 42
 						)
 					);
-				$data['image_title.2'] = $image_title[0]->image_title; 
+				$data['image_title.2'] =( count ($image_title) > 0 ?  $image_title[0]->image_title:'' ); 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
@@ -367,7 +367,7 @@ class Main extends CI_Controller {
 							'image_type_id' => 43
 						)
 					);
-				$data['image_title.3'] = $image_title[0]->image_title; 
+				$data['image_title.3'] =( count ($image_title) > 0 ?  $image_title[0]->image_title:'' ); 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
@@ -416,7 +416,7 @@ class Main extends CI_Controller {
 							'image_type_id' => 44
 						)
 					);
-				$data['image_title.4'] = $image_title[0]->image_title; 
+				$data['image_title.4'] =( count ($image_title) > 0 ?  $image_title[0]->image_title:'' ); 
 				foreach( $data['showpage_items']  as  $showpage_item){
 					foreach( $showpage_item  as  $key => $value){
 						$showpage_item[$key]=$value;
