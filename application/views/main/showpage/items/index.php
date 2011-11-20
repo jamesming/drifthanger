@@ -2,7 +2,7 @@
 			
 		iframe#iframe_src{
 		width:850px;
-		height:1060px;	
+		height:1360px;	
 		}
 			
 			
@@ -99,33 +99,7 @@
 							
 							
 						</div>
-												
-						
-															
-						<div  class='float_left show_page_cast hide'  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
-							cast
-						</div>								
-						
-						
-						<div  class='float_left show_page_feature hide'  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
-							features
-						</div>								
-						
-						<div  class='float_left show_page_photos hide'  showpage_item_id='<?php echo  $showpage_item['id']   ?>'    href='#fancy_zoom_div'>
-							photos
-						</div>	
 
-						
-						
-						<div  class='float_left show_page_mobile_gallery_photo hide'  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
-							mobile gallery
-						</div>	
-			
-													
-						
-						<div  class='float_left hide'  >
-							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['url_name']    ?>'>preview</a>
-						</div>
 						<div  class='float_left  hide showpage_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
 						</div>	

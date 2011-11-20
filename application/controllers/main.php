@@ -163,6 +163,22 @@ class Main extends CI_Controller {
 		
 	}
 	
+	public function update_image_title(){
+			
+	
+			$showpage_items_image_id = $this->input->post('showpage_items_image_id');
+			$image_title = $this->input->post('image_title');
+	
+			$this->my_database_model->update_table_where(
+											$table = 'showpage_items_images', 
+											$where_array = array('id'=> $showpage_items_image_id),
+											$set_what_array = array(
+												'image_title' => $image_title
+												)
+											);
+	}
+	
+	
 	public function update_destination_items_tags(){
 		
 

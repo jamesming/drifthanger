@@ -85,7 +85,7 @@ margin-top: 20px;
 													  <div class="middle">
 													  	
 																<div id='logo' >
-																	<img src='<?php  echo base_url()   ?>images/logo.png' />
+																	<img src='<?php  echo base_url()   ?>images/icon.png' / width='100px'>
 															
 																</div>
 																<div  class='wrapper '   style='margin:0px 0px 0px 30px;'  >	
