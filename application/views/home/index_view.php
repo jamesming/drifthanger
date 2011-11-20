@@ -50,7 +50,7 @@ min-height:450px;
 }
 
 .middle .answer-boxes-container {
-    padding-left: 86px;
+    padding-left: 186px;
     margin-top: 24px;
 }
 .middle .answer-boxes-container .answer-box{
