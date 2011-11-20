@@ -35,10 +35,10 @@ height:5px;
 background:white;	
 }
 .middle{
-	background:#71C1CA;
-/*background-image: url(<?php  echo base_url()   ?>images/Page1_bg.jpg);
+/*	background:#71C1CA;*/
+background-image: url(<?php  echo base_url()   ?>images/Page1_bg.jpg);
 background-position: center, center;
-background-repeat: no-repeat;*/
+background-repeat: no-repeat;
 min-height:450px;	
 }
 .middle .first-question{
