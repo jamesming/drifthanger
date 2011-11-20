@@ -49,7 +49,7 @@ min-height:450px;
 }
 
 .middle .answer-boxes-container {
-    padding-left: 23px;
+    padding-left: 86px;
     margin-top: 24px;
 }
 .middle .answer-boxes-container .answer-box{
@@ -60,10 +60,11 @@ min-height:450px;
     color:white;
     font-weight:bold;
     font-size:23px;
+    visibility:hidden;
 }
 .middle .answer-boxes-container img {
     width: 222px;
-    margin-right: 13px;
+    margin-right:50px;
 }
 
 .bottom{
@@ -126,7 +127,7 @@ min-height:120px;
 			<div><?php  echo $data['item.3.image_title']   ?>	
 			</div>
 		</div>
-		<div  class='answer-box '>
+		<div  class='answer-box '   style='display:none'  >
 			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item4_image_id']   ?>/image.png'   images_item_id='<?php echo $data['showpage_item4_image_id']   ?>' />	
 			<div><?php  echo $data['item.4.image_title']   ?>	
 			</div>

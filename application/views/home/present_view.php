@@ -94,12 +94,12 @@ min-height:120px;
 </div>
 <div  class='white-line ' >
 </div>
-<div  class='middle ' >
+<div  class='middle container' >
 
 
 		<div  class=' span-6 left-middle' >test
 		</div>
-		<div class=' span-19 last right-middle' >test
+		<div class=' span-18 last right-middle' >test
 		</div>
 	 
 </div>
