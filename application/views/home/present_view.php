@@ -37,7 +37,7 @@ background:white;
 body{
 background-image: url(<?php  echo base_url()   ?>images/Screen_Page2.jpg);
 background-position: center top;
-min-height:450px;	
+min-height:1200px;	
 }
 
 .steps{
