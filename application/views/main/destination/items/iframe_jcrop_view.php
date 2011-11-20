@@ -63,12 +63,12 @@
 
 										// AJAX UPDATE
 										$.post("<?php echo base_url() . 'index.php/main/crop_image/';    ?>",{
-											what_item:'showpage',
+											what_item:'destination',
 											x_origin: $('#x').val(),
 											y_origin: $('#y').val(),
 											width: $('#w').val(),
 											height: $('#h').val(),
-											showpage_image_item_id: '<?php echo $showpage_image_item_id;    ?>'
+											destination_image_item_id: '<?php echo $destination_image_item_id;    ?>'
 										},function(data) {
 											
 											
@@ -101,7 +101,7 @@
 
 
 <div   style='width:<?php echo $width_of_file;    ?>px;margin-left:auto;margin-right:auto'  > 
-	<img     id='cropbox' src = '<?php  echo  base_url() . 'uploads/showpage_items_images/' . $showpage_image_item_id .  '/transition.png?random=' . rand(5,6815);   ?>'>		
+	<img     id='cropbox' src = '<?php  echo  base_url() . 'uploads/destination_items_images/' . $destination_image_item_id .  '/transition.png?random=' . rand(5,6815);   ?>'>		
 </div> 
 
 

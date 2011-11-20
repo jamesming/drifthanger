@@ -37,35 +37,16 @@ height:auto;
 		text-align:center;
 		padding:5px
 }		
-#main_section div#parent_tabs li.carousel{
-		background:orange;
-}		
-#main_section div#parent_tabs li.nu_spotlight{
-		background:lightgreen;
-}	
-#main_section div#parent_tabs li.feature{
-		background:yellow;
-}	
+
 
 #main_section div#parent_tabs li.showpage{
 		background:skyblue;
-}				
-#main_section div.children_tabs{
-		width:700px;
-		clear:both;
-		height:auto;
-		margin:0px 0px 0px 20px;
-		padding-bottom:20px;
-}
+}			
+#main_section div#parent_tabs li.destination{
+		background:orange;
+}		
+	
 
-#main_section div.children_tabs li{
-		float:left;
-		width:100px;
-		border:1px dotted gray;
-		margin-right:10px;
-		text-align:center;
-		padding:5px
-}
 
 iframe#iframe_src{
 width:600px;
@@ -91,25 +72,9 @@ height:690px;
 
 		<div  id='parent_tabs'>
 			
-<?php if (  in_array( $data['segment3'], array('carousel','nu_spotlight','feature','showpage','calendar'))  ) { ?>			
+<?php if (  in_array( $data['segment3'], array('destination','showpage') ) ) { ?>			
   		<ul>
-  			<li  class='carousel hide'>
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/carousel'>
-  					Carousel
-  				</a>
-  			</li>
-  			<li  class='nu_spotlight hide' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/nu_spotlight'>
-  				Nu Spotlight
-  				</a>
-  			</li>
-  			
-  			<li  class='feature hide' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/feature'>
-  				Features
-  				</a>
-  			</li>
-  			
+
   			
   			<li  class='showpage ' >
   				<a href='<?php   echo base_url()  ?>index.php/main/index/showpage'>
@@ -117,11 +82,13 @@ height:690px;
   				</a>
   			</li>
   			
-  			
-  			<li  class='calendar hide' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/calendar'>  				Calendar
+  			<li  class='destination ' >
+  				<a href='<?php   echo base_url()  ?>index.php/main/index/destination'>
+  				Destinations
   				</a>
   			</li>
+  			
+
   		</ul>
 <?php }else{ ?>	
 
@@ -131,83 +98,12 @@ height:690px;
 
 		</div>
 
-<?php if( $data['segment3'] == 'carousel'){?>
 
+<?php 		
 
-  	<div class='children_tabs' >
-  		
-  		<ul>
-  			<li  class='items ' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/carousel/items'>
-  					Items
-  				</a>
-  			</li>
-  			<li  class='sets ' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/carousel/sets'>
-  				Sets
-  				</a>
-  			</li>
-  		</ul>
-  		
-  	</div>
+	$this->load->view('main/'.$data['segment3'].'/items/index.php');
 
-
-<?php }elseif( $data['segment3'] == 'nu_spotlight') {?>
-
-  	<div class='children_tabs' >
-  		
-  		<ul>
-  			<li  class='items ' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/nu_spotlight/items'>
-  					Items
-  				</a>
-  			</li>
-  			<li  class='sets ' >
-  				<a href='<?php   echo base_url()  ?>index.php/main/index/nu_spotlight/sets'>
-  				Sets
-  				</a>
-  			</li>
-
-  		</ul>
-  		
-  	</div>
-  	
-  	
-
-  	
-
-<?php }elseif($data['segment3'] == 'calendar'){ 
-
-		$this->load->view('main/calendar/index.php');
-
-}; 
-
-		
-if( isset($data['segment4'])){   
-	
-			switch ( $data['segment4'] ) {
-	
-		    case 'items':
-	
-					$this->load->view('main/'.$data['segment3'].'/items/index.php');
-				
-		    break;
-		    
-		    case 'sets':
-	
-					$this->load->view('main/'.$data['segment3'].'/sets/index.php');
-				
-		    break;
-		    
-
-		
-			}
-			
-};
-		
-
-		
-		?>
+?>
 
 	</div>
 	<div class="bottom"><div class="sub_bottom">&nbsp;</div></div>

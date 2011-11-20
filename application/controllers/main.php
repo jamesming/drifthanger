@@ -76,6 +76,20 @@ class Main extends CI_Controller {
 						 );
 			    break;
 			    
+			    
+			    
+			    case 'destination':
+		
+						$data = $this->custom->prepare_destination_items( 
+								$segment4,
+								$this->input->get()
+						 );
+						 
+
+						 
+			    break;
+			    
+			    
 			   
 				};
 
@@ -342,7 +356,71 @@ class Main extends CI_Controller {
 	
 
 
+	/**
+	 * get_destination_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_destination_form
+	 * @access public
+	 */
+	 
+	 
+	public function get_destination_form(){
+		
+				$data['destination_items'] = $this->query->get_destination_items(
+							$where_array = array( 'id' => $this->input->get('destination_item_id')) 
+				);	
 
+
+				/* one */
+				foreach( $data['destination_items']  as  $destination_item){
+					foreach( $destination_item  as  $key => $value){
+						$destination_item[$key]=$value;
+						if( $key == 'destination_image_id'){
+							
+								$join_array = array(
+									'tags' => 'tags.id = destinations_items_tags.tag_id'
+									);
+							
+							
+								$tags_raw = $this->my_database_model->select_from_table( 
+																				$table = 'destinations_items_tags', 
+																				$select_what = 'name',
+																				$where_array = array(
+																					'destinations_items_tags.destination_item_id' => $value
+																				), 
+																				$use_order = TRUE, 
+																				$order_field = 'name', 
+																				$order_direction = 'asc', 
+																				$limit = -1,
+																				$use_join = TRUE, 
+																				$join_array
+																				);	
+																				
+								$tags_raw = $this->tools->object_to_array($tags_raw);								
+								foreach( $tags_raw  as  $tag){
+									foreach( $tag  as  $value){
+										$tags[] = $value;
+									}
+								}
+								$data['destination_hero_tags'] = ( isset( $tags) ? $tags:array() );
+				
+				
+						};
+						
+					}
+					
+				}
+				unset($tags);
+
+				
+
+				$this->load->view('main/destination/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
 	
 	
 	/**
@@ -485,7 +563,6 @@ class Main extends CI_Controller {
 					?>
 						
 									<script type="text/javascript" language="Javascript">
-												//document.location = '<?php echo base_url()    ?>index.php/main/resize_images?what_item=<?php  echo $what_item   ?>&image_type=<?php echo  $this->input->post('image_type')   ?>&image_id=<?php echo $items_image_id    ?>';		
 												
 												window.parent.$('#submit_jcrop_table').show();
 												window.parent.open_jcrop( <?php echo $this->input->post('items_image_id')    ?>); 
@@ -507,10 +584,11 @@ class Main extends CI_Controller {
 
 public function iframe_jcrop_form(){
 	
+			$what_item = $this->input->get('what_item');
 	
-			$showpage_image_item_id = $this->input->get('showpage_image_item_id');
+			$image_item_id = $this->input->get($what_item.'_image_item_id');
 		
-			$dir_path = 'uploads/showpage_items_images/'  .  $showpage_image_item_id ;
+			$dir_path = 'uploads/'.$what_item.'_items_images/'  .  $image_item_id ;
 		
 			
 			$image_information = getimagesize($dir_path . '/' . 'transition.png');
@@ -528,11 +606,11 @@ public function iframe_jcrop_form(){
 			$data= array(
 			'width_of_file' => $new_width, 
 			'height_of_file' => $new_height,
-			'showpage_image_item_id' => $showpage_image_item_id			
+			$what_item.'_image_item_id' => $image_item_id			
 			 );	
 			
 			
-			$this->load->view('main/showpage/items/iframe_jcrop_view', $data);
+			$this->load->view('main/'.$what_item.'/items/iframe_jcrop_view', $data);
 
 
 	
@@ -542,9 +620,11 @@ public function iframe_jcrop_form(){
 
 public function crop_image(){
 	
-$showpage_image_item_id	= $this->input->post('showpage_image_item_id');
+$what_item = $this->input->post('what_item');
+	
+$image_item_id	= $this->input->post($what_item.'_image_item_id');
 
-$dir_path = 'uploads/showpage_items_images/'  .  $showpage_image_item_id . '/';
+$dir_path = 'uploads/'.$what_item.'_items_images/'  .  $image_item_id . '/';
 		
 		
 
