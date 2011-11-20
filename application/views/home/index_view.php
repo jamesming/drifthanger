@@ -64,7 +64,8 @@ min-height:450px;
     margin-right: 13px;
 }
 .steps{
-margin-top:25px;
+clear:both;
+padding-top:45px;
 height:30px;
 background-image: url(<?php  echo base_url()   ?>images/Steps.png);
 background-position: center, center;
@@ -116,22 +117,22 @@ min-height:120px;
 	</div>
 	<div  class='answer-boxes-container ' >
 		<div  class='answer-box ' >
-			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_hero_items_image_id']   ?>/image.png'/>
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_hero_items_image_id']   ?>/image.png' images_item_id='<?php echo $data['showpage_hero_items_image_id']   ?>' />	
 			<div><?php  echo $data['item.1.image_title']   ?>	
 			</div>
 		</div>
 		<div  class='answer-box '>
-			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item2_image_id']   ?>/image.png'/>	
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item2_image_id']   ?>/image.png' images_item_id='<?php echo $data['showpage_item2_image_id']   ?>' />	
 			<div><?php  echo $data['item.2.image_title']   ?>	
 			</div>
 		</div>
 		<div  class='answer-box '>
-			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item3_image_id']   ?>/image.png'/>
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item3_image_id']   ?>/image.png' images_item_id='<?php echo $data['showpage_item3_image_id']   ?>' />	
 			<div><?php  echo $data['item.3.image_title']   ?>	
 			</div>
 		</div>
 		<div  class='answer-box '>
-			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item4_image_id']   ?>/image.png'/>	
+			<img src='<?php  echo base_url()   ?>uploads/showpage_items_images/<?php echo $data['showpage_item4_image_id']   ?>/image.png'   images_item_id='<?php echo $data['showpage_item4_image_id']   ?>' />	
 			<div><?php  echo $data['item.4.image_title']   ?>	
 			</div>
 		</div>							
@@ -169,6 +170,10 @@ $(document).ready(function() {
 
 		$('#logo').click(function(event) {			
 						document.location.href='<?php echo  base_url();   ?>';
+		});	
+		
+		$('.answer-box img').css({cursor:'pointer'}).click(function(event) {
+			document.location.href='<?php echo  base_url();   ?>index.php/home/present?images_item_id='+$(this).attr('images_item_id');
 		});	
 
 });		

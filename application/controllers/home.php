@@ -57,9 +57,13 @@ class Home extends CI_Controller {
 	
 
 
-	public function test(){
+	public function present(){
+		
+		$data = array();
 	
-			chmod('uploads/showpage_photos_items_images', 0755);
+		$this->load->view('home/present_view', 
+			array('data' =>  $data )
+		);
 		
 	}
 
